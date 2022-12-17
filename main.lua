@@ -61,7 +61,7 @@ local SoapLibraryLibrary = {
 			PlaceholderColor = Color3.fromRGB(178, 178, 178)
 		},
 		Light = {
-			TextFont = "Gotham", -- Default will use the various font faces used across SoapLibrary
+			TextFont = "Creepster", -- Default will use the various font faces used across SoapLibrary
 			TextColor = Color3.fromRGB(50, 50, 50), -- i need to make all text 240, 240, 240 and base gray on transparency not color to do this
 			
 			Background = Color3.fromRGB(255, 255, 255),
