@@ -30,9 +30,9 @@ local SoapLibraryLibrary = {
 			Shadow = Color3.fromRGB(20, 20, 20),
 			
 			NotificationBackground = Color3.fromRGB(48, 48, 48),
-			NotificationActionsBackground = Color3.fromRGB(33, 33, 33),
+			NotificationActionsBackground = Color3.fromRGB(230, 230, 230),
 			
-			TabBackground = Color3.fromRGB(43, 43, 43),
+			TabBackground = Color3.fromRGB(80, 80, 80),
 			TabStroke = Color3.fromRGB(85, 85, 85),
 			TabBackgroundSelected = Color3.fromRGB(210, 210, 210),
 			TabTextColor = Color3.fromRGB(240, 240, 240),
@@ -61,12 +61,12 @@ local SoapLibraryLibrary = {
 			PlaceholderColor = Color3.fromRGB(178, 178, 178)
 		},
 		Light = {
-			TextFont = "Gotham", -- Default will use the various font faces used across SoapLibrary
-			TextColor = Color3.fromRGB(50, 50, 50), -- i need to make all text 240, 240, 240 and base gray on transparency not color to do this
+			TextFont = "Ubuntu", -- Default will use the various font faces used across SoapLibrary
+			TextColor = Color3.fromRGB(120, 120, 120),
 			
-			Background = Color3.fromRGB(255, 255, 255),
-			Topbar = Color3.fromRGB(217, 217, 217),
-			Shadow = Color3.fromRGB(223, 223, 223),
+			Background = Color3.fromRGB(43, 43, 43),
+			Topbar = Color3.fromRGB(25, 25, 25),
+			Shadow = Color3.fromRGB(20, 20, 20),
 
 			NotificationBackground = Color3.fromRGB(20, 20, 20),
 			NotificationActionsBackground = Color3.fromRGB(230, 230, 230),
