@@ -32,7 +32,7 @@ local SoapLibraryLibrary = {
 			NotificationBackground = Color3.fromRGB(48, 48, 48),
 			NotificationActionsBackground = Color3.fromRGB(33, 33, 33),
 			
-			TabBackground = Color3.fromRGB(80, 80, 80),
+			TabBackground = Color3.fromRGB(43, 43, 43),
 			TabStroke = Color3.fromRGB(85, 85, 85),
 			TabBackgroundSelected = Color3.fromRGB(210, 210, 210),
 			TabTextColor = Color3.fromRGB(240, 240, 240),
