@@ -16,11 +16,6 @@ local SoapLibraryFolder = "SoapLibrary"
 local ConfigurationFolder = SoapLibraryFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 local Blur = Instance.new("BlurEffect")
-Blur.Parent = game.Lighting
-Blur.Size = 0
-Blur.Enabled = true
-
-
 
 local SoapLibraryLibrary = {
 	Flags = {},
@@ -38,7 +33,7 @@ local SoapLibraryLibrary = {
 			
 			TabBackground = Color3.fromRGB(80, 80, 80),
 			TabStroke = Color3.fromRGB(85, 85, 85),
-			TabBackgroundSelected = Color3.fromRGB(210, 210, 210),
+			TabBackgroundSelected = Color3.fromRGB(65, 65, 65),
 			TabTextColor = Color3.fromRGB(240, 240, 240),
 			SelectedTabTextColor = Color3.fromRGB(50, 50, 50),
 			
@@ -53,7 +48,7 @@ local SoapLibraryLibrary = {
 			SliderStroke = Color3.fromRGB(48, 119, 177),
 			
 			ToggleBackground = Color3.fromRGB(30, 30, 30),
-			ToggleEnabled = Color3.fromRGB(0, 146, 214),
+			ToggleEnabled = Color3.fromRGB(0, 255, 157),
 			ToggleDisabled = Color3.fromRGB(100, 100, 100),
 			ToggleEnabledStroke = Color3.fromRGB(0, 170, 255),
 			ToggleDisabledStroke = Color3.fromRGB(125, 125, 125),
@@ -2330,11 +2325,9 @@ UserInputService.InputBegan:Connect(function(input, processed)
 		if Debounce then return end
 		if Hidden then
 			Hidden = false
-            Blur.Size = 15
 			Unhide()
 		else
 			Hidden = true
-            Blur.Size = 0
 			Hide()
 		end
 	end
