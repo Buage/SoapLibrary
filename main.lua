@@ -15,6 +15,10 @@ local NotificationDuration = 6.5
 local SoapLibraryFolder = "SoapLibrary"
 local ConfigurationFolder = SoapLibraryFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
+local Blur = Instance.new("BlurEffect")
+Blur.Parent = game.Lighting
+Blur.Size = 0
+Blur.Enabled = true
 
 
 
@@ -2326,9 +2330,11 @@ UserInputService.InputBegan:Connect(function(input, processed)
 		if Debounce then return end
 		if Hidden then
 			Hidden = false
+            Blur.Size = 15
 			Unhide()
 		else
 			Hidden = true
+            Blur.Size = 0
 			Hide()
 		end
 	end
