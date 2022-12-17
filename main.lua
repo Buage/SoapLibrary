@@ -11,11 +11,10 @@ iRay  | Programming
 
 
 local Release = "Beta 7R"
-local NotificationDuration = 6.5
+local NotificationDuration = 5
 local SoapLibraryFolder = "SoapLibrary"
 local ConfigurationFolder = SoapLibraryFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
-local Blur = Instance.new("BlurEffect")
 
 local SoapLibraryLibrary = {
 	Flags = {},
@@ -39,7 +38,7 @@ local SoapLibraryLibrary = {
 			
 			ElementBackground = Color3.fromRGB(35, 35, 35),
 			ElementBackgroundHover = Color3.fromRGB(40, 40, 40),
-			SecondaryElementBackground = Color3.fromRGB(25, 25, 25), -- For labels and paragraphs
+			SecondaryElementBackground = Color3.fromRGB(33, 33, 33), -- For labels and paragraphs
 			ElementStroke = Color3.fromRGB(50, 50, 50),
 			SecondaryElementStroke = Color3.fromRGB(40, 40, 40), -- For labels and paragraphs
 			
@@ -881,7 +880,7 @@ function SoapLibraryLibrary:CreateWindow(Settings)
 	Main.Shadow.Image.ImageTransparency = 1
 	LoadingFrame.Version.TextTransparency = 1
 	LoadingFrame.Title.Text = Settings.LoadingTitle or "SoapLibrary Interface Suite"
-	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by Sirius"
+	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "zShadowSkilled"
 	if Settings.LoadingTitle ~= "SoapLibrary Interface Suite" then
 		LoadingFrame.Version.Text = "SoapLibrary UI"
 	end
