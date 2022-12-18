@@ -27,8 +27,8 @@ local SoapLibraryLibrary = {
 			Topbar = Color3.fromRGB(26, 26, 26),
 			Shadow = Color3.fromRGB(20, 20, 20),
 			
-			NotificationBackground = Color3.fromRGB(20, 20, 20),
-			NotificationActionsBackground = Color3.fromRGB(230, 230, 230),
+			NotificationBackground = Color3.fromRGB(0, 0, 0),
+			NotificationActionsBackground = Color3.fromRGB(51, 51, 51),
 			
 			TabBackground = Color3.fromRGB(80, 80, 80),
 			TabStroke = Color3.fromRGB(85, 85, 85),
@@ -634,7 +634,7 @@ end
 
 function Hide()
 	Debounce = true
-	SoapLibraryLibrary:Notify({Title = "Interface Hidden", Content = "The interface has been hidden, you can unhide the interface by tapping RightControl", Duration = 7})
+	SoapLibraryLibrary:Notify({Title = "Interface Hidden", Content = "The interface has been hidden, you can access it by tapping RightControl", Duration = 7})
 	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 470, 0, 400)}):Play()
 	TweenService:Create(Main.Topbar, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 470, 0, 45)}):Play()
 	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {BackgroundTransparency = 1}):Play()
