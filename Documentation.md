@@ -8,7 +8,10 @@ local SoapLibrary = loadstring(game:HttpGet('https://raw.githubusercontent.com/z
 ```
 
 ### Secure Mode
-If your game crash or kick you when you boot the SoapLibrary , just replace the normal boot by this : local SoapLibrary = loadstring(game:HttpGet('https://raw.githubusercontent.com/zShadowSkilled1/SoapLibrary/main/main.lua'))()getgenv().SecureMode = true
+If your game crash or kick you when you boot the SoapLibrary , just replace the normal boot by this : 
+```lua
+local SoapLibrary = loadstring(game:HttpGet('https://raw.githubusercontent.com/zShadowSkilled1/SoapLibrary/main/main.lua'))()getgenv().SecureMode = true
+```
 
 ### Enabling Configuration Saving
 - Enable ConfigurationSaving in the CreateWindow function
