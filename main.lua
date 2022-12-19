@@ -96,9 +96,10 @@ local SoapLibraryLibrary = {
 			InputBackground = Color3.fromRGB(31, 159, 71),
 			InputStroke = Color3.fromRGB(19, 65, 31),
 			PlaceholderColor = Color3.fromRGB(178, 178, 178)
-		}
+		},
 	}
 }
+
 
 
 
@@ -1013,7 +1014,7 @@ function SoapLibraryLibrary:CreateWindow(Settings)
 			local KeyMain = KeyUI.Main
 			KeyMain.Title.Text = Settings.KeySettings.Title or Settings.Name
 			KeyMain.Subtitle.Text = Settings.KeySettings.Subtitle or "Key System"
-			KeyMain.NoteMessage.Text = Settings.KeySettings.Note or "No instructions"
+			KeyMain.NoteMessage.Text = Settings.KeySettings.Note or "Looks Like There Is No Notes :("
 
 			KeyMain.Size = UDim2.new(0, 467, 0, 175)
 			KeyMain.BackgroundTransparency = 1
@@ -1083,7 +1084,7 @@ function SoapLibraryLibrary:CreateWindow(Settings)
 						TweenService:Create(KeyMain.NoteMessage, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {TextTransparency = 1}):Play()
 						TweenService:Create(KeyMain.Hide, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {ImageTransparency = 1}):Play()
 						wait(0.45)
-						game.Players.LocalPlayer:Kick("No Attempts Remaining")
+						game.Players.LocalPlayer:Kick("Uh Oh , You Have No Attemps Reaming...")
 						game:Shutdown()
 					end
 					KeyMain.Input.InputBox.Text = ""
