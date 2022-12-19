@@ -28,7 +28,7 @@ local SoapLibraryLibrary = {
 			Shadow = Color3.fromRGB(20, 20, 20),
 			
 			NotificationBackground = Color3.fromRGB(0, 0, 0),
-			NotificationActionsBackground = Color3.fromRGB(51, 51, 51),
+			NotificationActionsBackground = Color3.fromRGB(208, 208, 208),
 			
 			TabBackground = Color3.fromRGB(80, 80, 80),
 			TabStroke = Color3.fromRGB(85, 85, 85),
@@ -1278,9 +1278,9 @@ function SoapLibraryLibrary:CreateWindow(Settings)
 					TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(85, 0, 0)}):Play()
 					TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {TextTransparency = 1}):Play()
 					TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
-					Button.Title.Text = "Callback Error"
+					Button.Title.Text = "Callback Error | Press F9 For More Infos"
 					print("SoapLibrary | "..ButtonSettings.Name.." Callback Error " ..tostring(Response))
-					wait(0.5)
+					wait(3)
 					Button.Title.Text = ButtonSettings.Name
 					TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
 					TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {TextTransparency = 0.9}):Play()
