@@ -12,6 +12,8 @@ local tweenInfo = TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection
 local Library = {}
 GUI = {}
 
+print('SoapLibrary')
+
 function Library:validate(defaults, options)
 	for i, v in pairs (defaults) do
 		if options[i] == nil then
@@ -28,7 +30,8 @@ function Library:tween(object, goal, callback)
 end
 
 function Library:Init(options)
-
+print(options)
+	
 	options = Library:validate({
 		name = "test"
 	}, options or {})
