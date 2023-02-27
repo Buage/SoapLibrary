@@ -27,7 +27,7 @@ function SoapLibrary:tween(object, goal, callback)
 	tween:Play()
 end
 
-function SoapLibrary:Init(options)
+function SoapLibrary:CreateWindow(options)
 
 	options = SoapLibrary:validate({
 		name = "test"
