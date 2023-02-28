@@ -46,8 +46,7 @@ function SoapLibrary:Init(options)
 		--[[ MAIN FRAME ]]--
 
 		-- StarterGui.SoapLibrary
-		GUI["1"] = Instance.new("ScreenGui");
-		if runService:IsStudio() then GUI["1"].Parent = coreGui else GUI["1"].Parent = lp.PlayerGui end
+		GUI["1"] = Instance.new("ScreenGui", coreGui);
 		GUI["1"]["Name"] = [[SoapLibrary]];
 		GUI["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
