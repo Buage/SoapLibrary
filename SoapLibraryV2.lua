@@ -380,7 +380,7 @@ function SoapLibrary:Init(options)
 					wait(0.5)
 					
 					GUI["67"]:Destroy()
-				else
+				elseif GUIOpened == false then
 					if GUI["66"]:FindFirstChild("NotificationFrame") then
 						GUI["67"]:Destroy()
 						GUIOpened = true
