@@ -46,7 +46,8 @@ function SoapLibrary:Init(options)
 		--[[ MAIN FRAME ]]--
 
 		-- StarterGui.SoapLibrary
-		GUI["1"] = Instance.new("ScreenGui", coreGui);
+		GUI["1"] = Instance.new("ScreenGui");
+		if runService:IsStudio() then GUI["1"].Parent = coreGui else GUI["1"].Parent = lp.PlayerGui end
 		GUI["1"]["Name"] = [[SoapLibrary]];
 		GUI["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
@@ -224,8 +225,81 @@ function SoapLibrary:Init(options)
 		
 		
 		GUI["b"].MouseButton1Down:Connect(function()
-			GUI["2"].Visible = false
 			GUIOpened = false
+			GUI["2"].Visible = false
+
+			-- StarterGui.SoapLibrary.Notifications.NotificationFrame
+			GUI["67"] = Instance.new("Frame", GUI["66"]);
+			GUI["67"]["BackgroundColor3"] = Color3.fromRGB(32, 32, 32);
+			GUI["67"]["Size"] = UDim2.new(0, 279, 0, 105);
+			GUI["67"]["Name"] = [[NotificationFrame]];
+			GUI["66"]["BackgroundTransparency"] = 1;
+
+			-- StarterGui.SoapLibrary.Notifications.NotificationFrame.UICorner
+			GUI["68"] = Instance.new("UICorner", GUI["67"]);
+
+
+			-- StarterGui.SoapLibrary.Notifications.NotificationFrame.UIPadding
+			GUI["69"] = Instance.new("UIPadding", GUI["67"]);
+			GUI["69"]["PaddingTop"] = UDim.new(0, 1);
+			GUI["69"]["PaddingRight"] = UDim.new(0, 1);
+			GUI["69"]["PaddingBottom"] = UDim.new(0, 1);
+			GUI["69"]["PaddingLeft"] = UDim.new(0, 1);
+
+			-- StarterGui.SoapLibrary.Notifications.NotificationFrame.NotificationTitle
+			GUI["6a"] = Instance.new("TextLabel", GUI["67"]);
+			GUI["6a"]["TextWrapped"] = true;
+			GUI["6a"]["TextScaled"] = true;
+			GUI["6a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+			GUI["6a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+			GUI["6a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+			GUI["6a"]["TextSize"] = 14;
+			GUI["6a"]["TextColor3"] = Color3.fromRGB(192, 192, 192);
+			GUI["6a"]["Size"] = UDim2.new(0, 278, 0, 22);
+			GUI["6a"]["Text"] = [[Interface Closed]];
+			GUI["6a"]["Name"] = [[NotificationTitle]];
+			GUI["6a"]["BackgroundTransparency"] = 1;
+			GUI["6a"]["Position"] = UDim2.new(3.725290298461914e-09, 0, -0.007936477661132812, 0);
+
+			-- StarterGui.SoapLibrary.Notifications.NotificationFrame.NotificationTitle.UIPadding
+			GUI["6b"] = Instance.new("UIPadding", GUI["6a"]);
+			GUI["6b"]["PaddingTop"] = UDim.new(0, 1);
+			GUI["6b"]["PaddingRight"] = UDim.new(0, 1);
+			GUI["6b"]["PaddingBottom"] = UDim.new(0, 1);
+			GUI["6b"]["PaddingLeft"] = UDim.new(0, 1);
+
+			-- StarterGui.SoapLibrary.Notifications.NotificationFrame.NotificationText
+			GUI["6c"] = Instance.new("TextLabel", GUI["67"]);
+			GUI["6c"]["TextWrapped"] = true;
+			GUI["6c"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
+			GUI["6c"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+			GUI["6c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+			GUI["6c"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+			GUI["6c"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+			GUI["6c"]["TextSize"] = 14;
+			GUI["6c"]["TextColor3"] = Color3.fromRGB(192, 192, 192);
+			GUI["6c"]["Size"] = UDim2.new(0, 278, 0, 77);
+			GUI["6c"]["Text"] = [[Press RightControl to re open the Interface.]];
+			GUI["6c"]["Name"] = [[NotificationText]];
+			GUI["6c"]["BackgroundTransparency"] = 1;
+			GUI["6c"]["Position"] = UDim2.new(0, 0, 0.2567422389984131, 0);
+
+			-- StarterGui.SoapLibrary.Notifications.NotificationFrame.NotificationText.UIPadding
+			GUI["6d"] = Instance.new("UIPadding", GUI["6c"]);
+			GUI["6d"]["PaddingTop"] = UDim.new(0, 1);
+			GUI["6d"]["PaddingRight"] = UDim.new(0, 1);
+			GUI["6d"]["PaddingBottom"] = UDim.new(0, 1);
+			GUI["6d"]["PaddingLeft"] = UDim.new(0, 1);
+
+			SoapLibrary:tween(GUI["67"], {BackgroundTransparency = 0})
+
+			wait(5)
+
+			SoapLibrary:tween(GUI["67"], {BackgroundTransparency = 1})
+
+			wait(0.5)
+
+			GUI["67"]:Destroy()
 		end)
 		
 		uis.InputBegan:Connect(function(key, gp)
