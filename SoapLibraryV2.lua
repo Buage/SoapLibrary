@@ -14,7 +14,7 @@ local GUIOpened = true
 local SoapLibrary = {}
 GUI = {}
 
-print('SoapLibrary Successfully Loaded')
+print('SoapSoapLibrary')
 
 function SoapLibrary:validate(defaults, options)
 	for i, v in pairs (defaults) do
@@ -389,9 +389,9 @@ function SoapLibrary:Init(options)
 			end
 		end)
 		
-		local frame = GUI["2"]
+		local frame = GUI["6"]
 		local dragToggle = nil
-		local dragSpeed = 1
+		local dragSpeed = 2
 		local dragStart = nil
 		local startPos = nil
 
