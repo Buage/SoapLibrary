@@ -14,7 +14,7 @@ local GUIOpened = true
 local SoapLibrary = {}
 GUI = {}
 
-print('SoapSoapLibrary')
+print('SoapLibrary Successfully Loaded')
 
 function SoapLibrary:validate(defaults, options)
 	for i, v in pairs (defaults) do
