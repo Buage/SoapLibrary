@@ -389,9 +389,9 @@ function SoapLibrary:Init(options)
 			end
 		end)
 		
-		local frame = GUI["6"]
+		local frame = GUI["2"]
 		local dragToggle = nil
-		local dragSpeed = 2
+		local dragSpeed = 0.25
 		local dragStart = nil
 		local startPos = nil
 
