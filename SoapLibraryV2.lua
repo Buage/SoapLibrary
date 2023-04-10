@@ -384,6 +384,9 @@ function SoapLibrary:Init(options)
 						GUI["67"]:Destroy()
 						GUIOpened = true
 						GUI["2"].Visible = true
+					else
+						GUIOpened = true
+						GUI["2"].Visible = true
 					end
 					end
 			end
