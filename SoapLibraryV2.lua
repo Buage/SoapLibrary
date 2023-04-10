@@ -2,7 +2,7 @@ local players = game:GetService("Players")
 local uis = game:GetService("UserInputService")
 local tweenService = game:GetService("TweenService")
 local runService = game:GetService("RunService")
-local coreGui = players.LocalPlayer.PlayerGui
+local coreGui = game.CoreGui
 
 local lp = players.LocalPlayer
 local mouse = lp:GetMouse()
@@ -165,11 +165,9 @@ function SoapLibrary:Init(options)
 		-- StarterGui.SoapLibrary.Notifications.UIListLayout
 		GUI["70"] = Instance.new("UIListLayout", GUI["66"]);
 		GUI["70"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-		GUI["70"]["VerticalAlignment"] = Enum.VerticalAlignment.Bottom;
-		
 
 	end
-	
+
 	do
 		-- StarterGui.SoapLibrary.Main.Navigation
 		GUI["d"] = Instance.new("Frame", GUI["2"]);
@@ -224,93 +222,9 @@ function SoapLibrary:Init(options)
 		GUI["1a"]["Position"] = UDim2.new(1, 0, 0, 0);
 		GUI["1a"]["Name"] = [[Line]];
 		
-		function SoapLibrary:Destroy()
-			GUI["1"]:Destroy()
-		end
-		
-		function SoapLibrary:CreateNotification(options)
-			options = SoapLibrary:validate({
-				title = "Ttitle",
-				message = "Message",
-				duration = 5
-			}, options or {})
-
-			-- StarterGui.SoapLibrary.Notifications.NotificationFrame
-			GUI["6f"] = Instance.new("Frame", GUI["66"]);
-			GUI["6f"]["BackgroundColor3"] = Color3.fromRGB(32, 32, 32);
-			GUI["6f"]["Size"] = UDim2.new(0, 279, 0, 105);
-			GUI["6f"]["Name"] = [[NotificationFrame]];
-
-			-- StarterGui.SoapLibrary.Notifications.NotificationFrame.UICorner
-			GUI["70"] = Instance.new("UICorner", GUI["6f"]);
-
-
-			-- StarterGui.SoapLibrary.Notifications.NotificationFrame.UIPadding
-			GUI["71"] = Instance.new("UIPadding", GUI["6f"]);
-			GUI["71"]["PaddingTop"] = UDim.new(0, 1);
-			GUI["71"]["PaddingRight"] = UDim.new(0, 1);
-			GUI["71"]["PaddingBottom"] = UDim.new(0, 1);
-			GUI["71"]["PaddingLeft"] = UDim.new(0, 1);
-
-			-- StarterGui.SoapLibrary.Notifications.NotificationFrame.NotificationTitle
-			GUI["72"] = Instance.new("TextLabel", GUI["6f"]);
-			GUI["72"]["TextWrapped"] = true;
-			GUI["72"]["TextScaled"] = true;
-			GUI["72"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-			GUI["72"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-			GUI["72"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-			GUI["72"]["TextSize"] = 14;
-			GUI["72"]["TextColor3"] = Color3.fromRGB(192, 192, 192);
-			GUI["72"]["Size"] = UDim2.new(0, 278, 0, 22);
-			GUI["72"]["Text"] = options.title;
-			GUI["72"]["Name"] = [[NotificationTitle]];
-			GUI["72"]["BackgroundTransparency"] = 1;
-			GUI["72"]["Position"] = UDim2.new(3.725290298461914e-09, 0, -0.007936477661132812, 0);
-
-			-- StarterGui.SoapLibrary.Notifications.NotificationFrame.NotificationTitle.UIPadding
-			GUI["73"] = Instance.new("UIPadding", GUI["72"]);
-			GUI["73"]["PaddingTop"] = UDim.new(0, 1);
-			GUI["73"]["PaddingRight"] = UDim.new(0, 1);
-			GUI["73"]["PaddingBottom"] = UDim.new(0, 1);
-			GUI["73"]["PaddingLeft"] = UDim.new(0, 1);
-
-			-- StarterGui.SoapLibrary.Notifications.NotificationFrame.NotificationText
-			GUI["74"] = Instance.new("TextLabel", GUI["6f"]);
-			GUI["74"]["TextWrapped"] = true;
-			GUI["74"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
-			GUI["74"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-			GUI["74"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-			GUI["74"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-			GUI["74"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-			GUI["74"]["TextSize"] = 14;
-			GUI["74"]["TextColor3"] = Color3.fromRGB(192, 192, 192);
-			GUI["74"]["Size"] = UDim2.new(0, 278, 0, 77);
-			GUI["74"]["Text"] = options.message;
-			GUI["74"]["Name"] = [[NotificationText]];
-			GUI["74"]["BackgroundTransparency"] = 1;
-			GUI["74"]["Position"] = UDim2.new(0, 0, 0.2567422389984131, 0);
-
-			-- StarterGui.SoapLibrary.Notifications.NotificationFrame.NotificationText.UIPadding
-			GUI["75"] = Instance.new("UIPadding", GUI["74"]);
-			GUI["75"]["PaddingTop"] = UDim.new(0, 1);
-			GUI["75"]["PaddingRight"] = UDim.new(0, 1);
-			GUI["75"]["PaddingBottom"] = UDim.new(0, 1);
-			GUI["75"]["PaddingLeft"] = UDim.new(0, 1);
-			
-			wait(options.duration)
-			
-			GUI["6f"]:Destroy()
-			
-		end
 		
 		GUI["b"].MouseButton1Down:Connect(function()
 			GUIOpened = false
-			
-			GUI["2"].BackgroundTransparency = 0
-			SoapLibrary:tween(GUI["2"], {BackgroundTransparency = 1})
-			SoapLibrary:tween(GUI["6"], {BackgroundTransparency = 1})
-			SoapLibrary:tween(GUI["d"], {BackgroundTransparency = 1})
-			wait(0.13)
 			GUI["2"].Visible = false
 
 			-- StarterGui.SoapLibrary.Notifications.NotificationFrame
@@ -375,28 +289,22 @@ function SoapLibrary:Init(options)
 			GUI["6d"]["PaddingRight"] = UDim.new(0, 1);
 			GUI["6d"]["PaddingBottom"] = UDim.new(0, 1);
 			GUI["6d"]["PaddingLeft"] = UDim.new(0, 1);
-			
+
 			SoapLibrary:tween(GUI["67"], {BackgroundTransparency = 0})
 
 			wait(5)
 
 			SoapLibrary:tween(GUI["67"], {BackgroundTransparency = 1})
 
-			wait(0.1)
+			wait(0.5)
 
-			GUI["67"]:Destroy()
+			GUI["67"].Visible = false
 		end)
 		
 		uis.InputBegan:Connect(function(key, gp)
 			if key.KeyCode == Enum.KeyCode.RightControl then
 				if GUIOpened == true then
 					GUIOpened = false
-					
-					GUI["2"].BackgroundTransparency = 0
-					SoapLibrary:tween(GUI["2"], {BackgroundTransparency = 1})
-					SoapLibrary:tween(GUI["6"], {BackgroundTransparency = 1})
-					SoapLibrary:tween(GUI["d"], {BackgroundTransparency = 1})
-					wait(0.13)
 					GUI["2"].Visible = false
 
 					-- StarterGui.SoapLibrary.Notifications.NotificationFrame
@@ -476,10 +384,6 @@ function SoapLibrary:Init(options)
 						GUI["67"]:Destroy()
 						GUIOpened = true
 						GUI["2"].Visible = true
-						GUI["2"].BackgroundTransparency = 1
-						SoapLibrary:tween(GUI["2"], {BackgroundTransparency = 0})
-						SoapLibrary:tween(GUI["6"], {BackgroundTransparency = 0})
-						SoapLibrary:tween(GUI["d"], {BackgroundTransparency = 0})
 					end
 					end
 			end
@@ -487,7 +391,7 @@ function SoapLibrary:Init(options)
 		
 		local frame = GUI["2"]
 		local dragToggle = nil
-		local dragSpeed = 1
+		local dragSpeed = 0.25
 		local dragStart = nil
 		local startPos = nil
 
@@ -1547,114 +1451,6 @@ function SoapLibrary:Init(options)
 			end
 
 			return Dropdown
-		end
-		
-		function Tab:CreateInput(options)
-			options = SoapLibrary:validate({
-				name = "Input Name",
-				callback = function() end
-			}, options or {})
-			
-			local Input = {}
-			
-			do
-				-- StarterGui.SoapLibrary.Main.ConetentContainer.HomeTab.Input
-				Input["64"] = Instance.new("Frame", Tab["1c"]);
-				Input["64"]["BackgroundColor3"] = Color3.fromRGB(11, 11, 11);
-				Input["64"]["Size"] = UDim2.new(0.9890000224113464, 0, 0, 32);
-				Input["64"]["Name"] = [[Input]];
-
-				-- StarterGui.SoapLibrary.Main.ConetentContainer.HomeTab.Input.UICorner
-				Input["65"] = Instance.new("UICorner", Input["64"]);
-				Input["65"]["CornerRadius"] = UDim.new(0, 4);
-
-				-- StarterGui.SoapLibrary.Main.ConetentContainer.HomeTab.Input.UIPadding
-				Input["66"] = Instance.new("UIPadding", Input["64"]);
-				Input["66"]["PaddingTop"] = UDim.new(0, 6);
-				Input["66"]["PaddingRight"] = UDim.new(0, 6);
-				Input["66"]["PaddingBottom"] = UDim.new(0, 6);
-				Input["66"]["PaddingLeft"] = UDim.new(0, 6);
-
-				-- StarterGui.SoapLibrary.Main.ConetentContainer.HomeTab.Input.Input
-				Input["67"] = Instance.new("TextBox", Input["64"]);
-				Input["67"]["PlaceholderColor3"] = Color3.fromRGB(192, 192, 192);
-				Input["67"]["TextSize"] = 14;
-				Input["67"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-				Input["67"]["TextWrapped"] = true;
-				Input["67"]["BackgroundColor3"] = Color3.fromRGB(46, 46, 46);
-				Input["67"]["TextColor3"] = Color3.fromRGB(192, 192, 192);
-				Input["67"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-				Input["67"]["Size"] = UDim2.new(1, 0, 1, 0);
-				Input["67"]["Text"] = options.name;
-				Input["67"]["Name"] = [[Input]];
-
-				-- StarterGui.SoapLibrary.Main.ConetentContainer.HomeTab.Input.Input.UICorner
-				Input["68"] = Instance.new("UICorner", Input["67"]);
-				Input["68"]["CornerRadius"] = UDim.new(0, 4);
-
-				-- StarterGui.SoapLibrary.Main.ConetentContainer.HomeTab.Input.Input.UIStroke
-				Input["69"] = Instance.new("UIStroke", Input["67"]);
-				Input["69"]["Color"] = Color3.fromRGB(71, 71, 71);
-				Input["69"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-				-- StarterGui.SoapLibrary.Main.ConetentContainer.HomeTab.Input.Input.UIPadding
-				Input["6a"] = Instance.new("UIPadding", Input["67"]);
-				Input["6a"]["PaddingTop"] = UDim.new(0, 6);
-				Input["6a"]["PaddingRight"] = UDim.new(0, 6);
-				Input["6a"]["PaddingBottom"] = UDim.new(0, 6);
-				Input["6a"]["PaddingLeft"] = UDim.new(0, 6);
-
-				-- StarterGui.SoapLibrary.Main.ConetentContainer.HomeTab.Input.UIStroke
-				Input["6b"] = Instance.new("UIStroke", Input["64"]);
-				Input["6b"]["Color"] = Color3.fromRGB(71, 71, 71);
-				Input["6b"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-			end
-			
-			-- Logic
-
-			do
-				Input["64"].MouseEnter:Connect(function()
-					Input.Hover = true
-
-					SoapLibrary:tween(Input["69"], {Color = Color3.fromRGB(191, 191, 191)})
-					SoapLibrary:tween(Input["64"], {BackgroundColor3 = Color3.fromRGB(61, 61, 61)})
-				end)
-
-				Input["64"].MouseLeave:Connect(function()
-					Input.Hover = false
-
-					SoapLibrary:tween(Input["69"], {Color = Color3.fromRGB(70, 70, 70)})
-					SoapLibrary:tween(Input["64"], {BackgroundColor3 = Color3.fromRGB(10, 10, 10)})
-				end)
-
-				uis.InputBegan:Connect(function(input, gpe)
-					if gpe then return end
-
-					Input["67"].FocusLost:Connect(function()
-						SoapLibrary:tween(Input["69"], {Color = Color3.fromRGB(255, 255, 255)})
-						SoapLibrary:tween(Input["64"], {BackgroundColor3 = Color3.fromRGB(0, 0, 0)})
-						options.callback(Input["67"].Text)
-						wait(0.1)
-						Input["67"].Text = options.name
-					end)
-				end)
-
-				uis.InputEnded:Connect(function(input, gpe)
-					if gpe then return end
-
-					if input.UserInputType == Enum.UserInputType.MouseButton1 then
-						Input.MouseDown = false
-						if Input.Hover then
-							SoapLibrary:tween(Input["69"], {Color = Color3.fromRGB(255, 255, 255)})
-							SoapLibrary:tween(Input["64"], {BackgroundColor3 = Color3.fromRGB(0, 0, 0)})
-						else
-							SoapLibrary:tween(Input["69"], {Color = Color3.fromRGB(70, 70, 70)})
-							SoapLibrary:tween(Input["64"], {BackgroundColor3 = Color3.fromRGB(10, 10, 10)})
-						end
-					end
-				end)
-			end
-			
 		end
 
 		return Tab
