@@ -1632,21 +1632,4 @@ function SoapLibrary:Init(options)
 	return GUI
 end
 
---return SoapLibrary
-
-local truc = SoapLibrary:Init({
-	name = "SoapClient Test"})
-
-local truclol = truc:CreateTab()
-
-local input = truclol:CreateInput({name = "hi btw", callback = function(Input) 
-	print(Input)
-end})
-
-local destrobutton = truclol:CreateButton({
-	name = "Destroy UI",
-	callback = function()
-		SoapLibrary:Destroy()
-	end,})
-
-SoapLibrary:CreateNotification({title = "hi", message = "lol xd lol ptdr xd mdr lol", duration = 20})
+return SoapLibrary
