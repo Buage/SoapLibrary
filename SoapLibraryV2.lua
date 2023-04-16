@@ -133,6 +133,7 @@ function SoapLibrary:Init(options)
 		GUI["b"]["ImageRectOffset"] = Vector2.new(924, 724);
 		GUI["b"]["Position"] = UDim2.new(1, -4, 0, 6);
 		GUI["b"]["BackgroundTransparency"] = 1;
+		GUI["b"]["Modal"] = true
 
 		-- StarterGui.SoapLibrary.Main.TopBar.Line
 		GUI["c"] = Instance.new("Frame", GUI["6"]);
