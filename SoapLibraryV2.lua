@@ -49,6 +49,7 @@ function SoapLibrary:Init(options)
 		GUI["1"] = Instance.new("ScreenGui", coreGui);
 		GUI["1"]["Name"] = [[SoapLibrary]];
 		GUI["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+		GUI["1"]["ResetOnSpawn"] = false
 
 		-- StarterGui.SoapLibrary.Main
 		GUI["2"] = Instance.new("Frame", GUI["1"]);
