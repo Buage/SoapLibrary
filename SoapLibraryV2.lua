@@ -480,6 +480,13 @@ function SoapLibrary:Init(options)
 						SoapLibrary:tween(GUI["2"], {BackgroundTransparency = 0})
 						SoapLibrary:tween(GUI["6"], {BackgroundTransparency = 0})
 						SoapLibrary:tween(GUI["d"], {BackgroundTransparency = 0})
+					else
+						GUIOpened = true
+						GUI["2"].Visible = true
+						GUI["2"].BackgroundTransparency = 1
+						SoapLibrary:tween(GUI["2"], {BackgroundTransparency = 0})
+						SoapLibrary:tween(GUI["6"], {BackgroundTransparency = 0})
+						SoapLibrary:tween(GUI["d"], {BackgroundTransparency = 0})
 					end
 					end
 			end
